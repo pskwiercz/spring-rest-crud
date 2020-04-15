@@ -1,6 +1,8 @@
 package com.pskwiercz.ticketmanagement.service;
 
 import com.pskwiercz.ticketmanagement.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -8,6 +10,8 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public List<User> getAllUsers() {
@@ -39,6 +43,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Integer id) {
+        LOG.info("Delete user with id:" + id);
         users.removeIf(user -> user.getUserid() == id);
     }
 
