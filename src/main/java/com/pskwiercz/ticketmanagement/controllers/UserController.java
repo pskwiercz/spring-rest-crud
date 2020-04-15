@@ -8,6 +8,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     @ResponseBody
     @RequestMapping("")
     public Map<String, Object> getAllUsers() {
@@ -17,7 +18,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public Map<String, Object> getUser(@PathVariable("id") Integer id) {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("result", "Get User Implementation");
@@ -25,7 +26,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @PostMapping()
     public Map<String, Object> createUser() {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("result", "Create User Implementation");
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "", method = RequestMethod.PUT)
+    @PutMapping()
     public Map<String, Object> updateUser() {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("result", "Update User Implementation");
@@ -41,7 +42,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    @DeleteMapping()
     public Map<String, Object> deleteUser() {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("result", "Delete User Implementation");
