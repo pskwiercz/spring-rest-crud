@@ -1,2 +1,2 @@
 # spring-rest-crud
-Spring REST CRUD
+Spring REST CRUD app
